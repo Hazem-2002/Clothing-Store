@@ -2,6 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
 }
 
 :root {
@@ -15,8 +17,10 @@
 
 body {
     font-family: "Mozilla Headline", sans-serif;
-    background-color: var(--background-color);
+    background: var(--background-color1) url(../images/background.png) no-repeat;
+    background-size: cover;
     color: var(--text-color);
+    height: 3000px;
 }
 
 /* ********************************** Header ********************************** */
@@ -35,10 +39,6 @@ header .section2 {
     align-items: center;
 }
 
-header ul {
-    list-style: none;
-}
-
 header ul li {
     display: inline-block;
     position: relative;
@@ -50,7 +50,6 @@ header .section1 ul li {
 }
 
 header a {
-    text-decoration: none;
     color: var(--primary-color);
     text-transform: capitalize;
     transition: color 0.3s;
@@ -356,4 +355,259 @@ header footer p a:hover {
   box-shadow: 0 10px 30px rgba(11, 11, 11, 0.12);
   background-color: var(--secondary-color);
   color: var(--primary-color);
+}
+
+/* //////////////////////////////////////////////////////////////// */
+
+.section-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 40px 0px;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--background-color2); 
+  border-radius: 999px;
+}
+
+.second-section .container {
+    width: 90%;
+    height: 342px;
+    margin: 50px auto;
+    display: grid;
+    grid-template: 1fr auto / repeat(4,1fr);
+    gap: 12px 40px;
+    position: relative;
+}
+
+.second-section .container .item-details {
+    text-align: center;
+}
+
+.second-section .container .item-details h2:first-child {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--primary-color);
+    text-transform: capitalize;
+    margin-bottom: 5px;
+    letter-spacing: 0.5px;
+}
+
+.second-section .container .item-details h2:last-child {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--background-color2); 
+}
+
+.second-section .container .item-details h2:last-child span {
+    font-size: 13px;
+    font-weight: normal;
+    text-decoration: line-through;
+    color: var(--accent-color); 
+}
+
+
+.second-section .container .left-arrow,
+.second-section .container .right-arrow  {
+    position: absolute;
+    top: 50%;
+    transform: translateY(calc(-50% - 21px));
+}
+
+.second-section .container .left-arrow {
+    left: -45px;
+}
+
+.second-section .container .right-arrow {
+    right: -45px;
+}
+
+.second-section .container .left-arrow a,
+.second-section .container .right-arrow a {
+    display: inline-block;
+    color: var(--background-color2);
+}
+
+.second-section .container .left-arrow a i,
+.second-section .container .right-arrow a i {
+    font-size: 30px;
+}
+
+.second-section .container .left-arrow:hover a i,
+.second-section .container .right-arrow:hover a i {
+    color: var(--background-color1);
+}
+
+.second-section .container .items,
+.second-section .container .items .item-container,
+.second-section .container .items .item-container .front-face,
+.second-section .container .items .item-container .back-face {
+    width: 100%;
+    height: 100%;
+}
+
+.second-section .container .items {
+    perspective: 1500px;
+    border: 1px solid var(--secondary-color);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.second-section .container .items .item-container {
+    transform-style: preserve-3d;
+    transition: all 1s;
+    position: relative;
+}
+
+.second-section .container .items:hover .item-container {
+    transform-origin: 50% 50% 20px;
+    transform: rotateY(180deg);
+}
+
+.second-section .container .items .item-container .front-face,
+.second-section .container .items .item-container .back-face {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.second-section .container .items .item-container .front-face {
+    z-index: 1;
+    transform: translateZ(40px);
+}
+
+.second-section .container .items .item-container .back-face {
+    transform: rotateY(180deg);
+    position: relative;
+}
+
+.second-section .container .item1 .item-container .front-face {
+    background: url(../images/item1-front.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.second-section .container .item1 .item-container .back-face {
+    background: url(../images/item1-back.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.second-section .container .item2 .item-container .front-face {
+    background: url(../images/item2-front.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.second-section .container .item2 .item-container .back-face {
+    background: url(../images/item2-back.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.second-section .container .item3 .item-container .front-face {
+    background: url(../images/item3-front.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.second-section .container .item3 .item-container .back-face {
+    background: url(../images/item3-back.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.second-section .container .item4 .item-container .front-face {
+    background: url(../images/item4-front.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.second-section .container .item4 .item-container .back-face {
+    background: url(../images/item4-back.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.second-section .container .items .item-container .right-face,
+.second-section .container .items .item-container .left-face {
+    height: 100%;
+    width: 40px;
+    position: absolute;
+    top: 0;
+    background-color: var(--background-color2);
+}
+
+.second-section .container .items .item-container .right-face {
+    right: 0;
+    transform-origin: 100% 50%;
+    transform: rotateY(90deg);
+}
+
+.second-section .container .items .item-container .left-face {
+    left: 0;
+    transform-origin: 0% 50%;
+    transform: rotateY(-90deg);
+}
+
+.second-section .container .items .item-container .top-face,
+.second-section .container .items .item-container .bottom-face {
+    height: 40px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    background-color: var(--background-color2);
+}
+
+.second-section .container .items .item-container .top-face {
+    top: 0;
+    transform-origin: 50% 0%;
+    transform: rotateX(90deg);
+}
+
+.second-section .container .items .item-container .bottom-face {
+    bottom: 0;
+    transform-origin: 50% 100%;
+    transform: rotateX(-90deg);
+}
+
+.second-section .container .items .item-container .back-face .item-icon {
+    position: absolute;
+    left: 50%;
+    bottom: 5%;
+    width: 70%;
+    height: 12%;
+    font-size: 0;
+    transform: translateX(-50%);
+}
+
+.second-section .container .items .item-container .back-face .item-icon ul {
+    width: 100%;
+    height: 100%;
+}
+.second-section .container .items .item-container .back-face .item-icon ul li {
+    display: inline-block;
+    width: calc(100% / 3);
+    height: 100%;
+    font-size: 20px;
+}
+
+.second-section .container .items .item-container .back-face .item-icon a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-color1);
+    color: var(--primary-color);
+    border: 1px solid var(--background-color1);
+}
+
+.second-section .container .items .item-container .back-face .item-icon ul li:hover a i {
+    color: var(--secondary-color);
 }
