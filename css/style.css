@@ -5,21 +5,24 @@
 }
 
 :root {
-  --primary-color: #0D1B2A;       /* Navy Blackish – modern, قوي وراقي */
-  --secondary-color: #E9D5CA;     /* Soft Nude Beige – إحساس فخم وهادئ */
-  --accent-color: #FF6B6B;        /* Neon Coral Red – ملفت وبيستخدم CTA */
-  --background-color: #FDFDFD;    /* Ultra White – يدي إحساس clean */
-  --text-color: #2B2D42;          /* Dark Grayish Blue – مريح للعين أكتر من الأسود الصريح */
+  --primary-color: #0D1B2A;       
+  --secondary-color: #E9D5CA;    
+  --accent-color: #FF6B6B;      
+  --background-color1: #D4B88E;
+  --background-color2: #B58E62;    
+  --text-color: #2B2D42;
 }
 
-
 body {
-    font-family: "Montserrat", sans-serif;
+    font-family: "Mozilla Headline", sans-serif;
     background-color: var(--background-color);
     color: var(--text-color);
 }
 
 /* ********************************** Header ********************************** */
+header {
+    background: linear-gradient(to bottom right , var(--background-color1) , var(--background-color2));
+}
 
 header .section1,
 header .section2 {
@@ -53,9 +56,13 @@ header a {
     transition: color 0.3s;
 }
 
-header .section2 li:hover > a,
+header li:hover > a,
 header li:hover > a > i {
     color: var(--secondary-color);
+}
+
+header .section1 li:hover > a > i {
+    transform: rotateY(180deg);
 }
 
 /* start of Section 1 in Header */
@@ -87,10 +94,11 @@ header .section1 li:hover::before,
 header .section1 li:hover::after {
     height: 100%;
 }
+/* end of Section 1 in Header */
 
 hr {
     width: 100%;
-    border: 1px solid #ccc;
+    border: 1px solid var(--secondary-color);
 }
 
 /* start of Section 2 in Header */
@@ -124,10 +132,11 @@ header .section2 .main-nav ul li .dropdown {
     transform-origin: 0 0;
     transform: translateX(-50%);
     scale: 0;
-    background-color: #ffffff;
-    border: 1px solid #ddd;
+    background-color: var(--background-color1);
+    border: 1px solid var(--secondary-color);
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    z-index: 1;
 }
 
 header .section2 .main-nav > ul li:hover > .dropdown {
@@ -216,7 +225,7 @@ header .section2 .main-nav > ul > li:hover > a::after {
 }
 
 header .section2 .icons li {
-    margin-left: 15px;
+    margin-left: 30px;
 }
 
 header .section2 .icons i {
@@ -245,21 +254,106 @@ header .section2 .icons ul li .Notification-Badge {
     font-size: 11px;
     background-color: var(--accent-color);
     color: white;
+    transition: all 0.5s;
 }
 
-/* Footer */
-footer {
+header .section2 .icons ul li:last-child:hover .Notification-Badge {
+    transform: translateY(-4px)
+}
+
+/* start of footer in Header */
+
+header footer {
     width: 100%;
     padding: 10px;
     background-color: var(--primary-color);
 }
 
-footer p {
-    color: white;
+header footer p {
+    color: var(--secondary-color);
     text-align: center;
     text-transform: capitalize;
 }
 
-footer a {
+header footer p a {
+    color: var(--background-color1);
+}
+
+header footer p a:hover {
     color: var(--secondary-color);
+}
+/* end of footer in Header */
+
+.main-section {
+    width: 100%;
+    height: calc(100vh - 142px);
+    background: url(../images/main-section.png) no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+}
+.main-section .content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  text-transform: capitalize;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.main-section .content .pretitle {
+  font-family: "Great Vibes", cursive;
+  color: var(--background-color2);
+  font-size: 36px;
+  margin-bottom: 8px;
+}
+
+.main-section .content .title {
+  font-size: 48px;
+  color: var(--background-color1);
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.main-section .content .title-deco {
+  height: 6px;
+  width: 80px;
+  background: var(--background-color1);
+  border-radius: 50px;
+  margin: 18px auto;
+  box-shadow: 0 4px 14px rgba(232, 94, 108, 0.12);
+}
+
+.main-section .content .subtitle {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--secondary-color);
+  margin-bottom: 16px;
+}
+
+.main-section .content .cta {
+  margin-top: 18px;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 10px 22px;
+  border-radius: 999px;
+  border: 2px solid var(--secondary-color);
+  transition: all 0.3s ease;
+  background: transparent;
+  color: var(--background-color1);
+  box-shadow: 0 6px 18px rgba(11, 11, 11, 0.08);
+  margin-inline-start: 12px;
+}
+
+.main-section .content .cta:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(11, 11, 11, 0.12);
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
 }
