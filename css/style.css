@@ -20,7 +20,6 @@ body {
     background: var(--background-color1) url(../images/background.png) no-repeat;
     background-size: cover;
     color: var(--text-color);
-    height: 3000px;
 }
 
 /* ********************************** Header ********************************** */
@@ -359,96 +358,64 @@ header footer p a:hover {
 
 /* //////////////////////////////////////////////////////////////// */
 
-.section-title {
-  text-align: center;
+.second-section .container {
+    width: 90%;
+    height: 456px;
+    margin: 50px auto;
+    display: grid;
+    grid-template: 90px 1fr auto / repeat(4,1fr);
+    gap: 12px 40px;
+    position: relative;
+}
+
+.second-section .container .second-section-header {
+    grid-column: span 4;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.second-section .container .second-section-header .section-title {
   font-size: 28px;
   font-weight: bold;
   color: var(--primary-color);
   text-transform: uppercase;
   letter-spacing: 2px;
-  margin: 40px 0px;
-  position: relative;
 }
 
-.section-title::after {
-  content: "";
-  display: block;
-  position: absolute;
-  bottom: -8px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 3px;
-  background: var(--background-color2); 
-  border-radius: 999px;
+.second-section .container .second-section-header::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 40px;
+    width: 100%;
+    height: 1px;
+    background-color: var(--background-color2);
 }
 
-.second-section .container {
-    width: 90%;
-    height: 342px;
-    margin: 50px auto;
-    display: grid;
-    grid-template: 1fr auto / repeat(4,1fr);
-    gap: 12px 40px;
+.second-section .container .second-section-header nav ul li,
+.second-section .container .second-section-header nav ul li a {
+    display: inline-block;
+    font-size: 20px;
+    margin-left: 8px;
+    text-transform: capitalize;
+    color: var(--primary-color);
+}
+
+.second-section .container .second-section-header nav ul li:last-child a {
+    color: var(--background-color2);
     position: relative;
 }
 
-.second-section .container .item-details {
-    text-align: center;
-}
-
-.second-section .container .item-details h2:first-child {
-    font-size: 16px;
-    font-weight: 500;
-    color: var(--primary-color);
-    text-transform: capitalize;
-    margin-bottom: 5px;
-    letter-spacing: 0.5px;
-}
-
-.second-section .container .item-details h2:last-child {
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--background-color2); 
-}
-
-.second-section .container .item-details h2:last-child span {
-    font-size: 13px;
-    font-weight: normal;
-    text-decoration: line-through;
-    color: var(--accent-color); 
-}
-
-
-.second-section .container .left-arrow,
-.second-section .container .right-arrow  {
+.second-section .container .second-section-header nav ul li:last-child a::after {
+    content: "";
     position: absolute;
-    top: 50%;
-    transform: translateY(calc(-50% - 21px));
-}
-
-.second-section .container .left-arrow {
-    left: -45px;
-}
-
-.second-section .container .right-arrow {
-    right: -45px;
-}
-
-.second-section .container .left-arrow a,
-.second-section .container .right-arrow a {
-    display: inline-block;
-    color: var(--background-color2);
-}
-
-.second-section .container .left-arrow a i,
-.second-section .container .right-arrow a i {
-    font-size: 30px;
-}
-
-.second-section .container .left-arrow:hover a i,
-.second-section .container .right-arrow:hover a i {
-    color: var(--background-color1);
+    left: 0;
+    bottom: -10px;
+    width: 100%;
+    height: 3px;
+    border-radius: 99px;
+    background-color: var(--background-color2);
 }
 
 .second-section .container .items,
@@ -610,4 +577,61 @@ header footer p a:hover {
 
 .second-section .container .items .item-container .back-face .item-icon ul li:hover a i {
     color: var(--secondary-color);
+}
+
+.second-section .container .left-arrow,
+.second-section .container .right-arrow  {
+    position: absolute;
+    top: 252px;
+    transform: translateY(calc(-50%));
+}
+
+.second-section .container .left-arrow {
+    left: -50px;
+}
+
+.second-section .container .right-arrow {
+    right: -50px;
+}
+
+.second-section .container .left-arrow a,
+.second-section .container .right-arrow a {
+    display: inline-block;
+    color: var(--background-color2);
+}
+
+.second-section .container .left-arrow a i,
+.second-section .container .right-arrow a i {
+    font-size: 30px;
+}
+
+.second-section .container .left-arrow:hover a i,
+.second-section .container .right-arrow:hover a i {
+    color: var(--background-color1);
+}
+
+.second-section .container .item-details {
+    text-align: center;
+}
+
+.second-section .container .item-details h2:first-child {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--primary-color);
+    text-transform: capitalize;
+    margin-bottom: 5px;
+    letter-spacing: 0.5px;
+}
+
+.second-section .container .item-details h2:last-child {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--background-color2); 
+}
+
+.second-section .container .item-details h2:last-child span {
+    font-size: 13px;
+    font-weight: normal;
+    text-decoration: line-through;
+    color: var(--accent-color); 
 }
