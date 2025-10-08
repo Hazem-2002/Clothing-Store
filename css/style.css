@@ -1,3 +1,6 @@
+/* ============================================================= */
+/* =====================  Global Reset  ======================== */
+/* ============================================================= */
 * {
     margin: 0;
     padding: 0;
@@ -6,6 +9,9 @@
     text-decoration: none;
 }
 
+/* ============================================================= */
+/* =====================  Root Variables  ====================== */
+/* ============================================================= */
 :root {
   --primary-color: #0D1B2A;       
   --secondary-color: #E9D5CA;    
@@ -15,6 +21,9 @@
   --text-color: #2B2D42;
 }
 
+/* ============================================================= */
+/* ======================  Body Styling  ======================= */
+/* ============================================================= */
 body {
     font-family: "Mozilla Headline", sans-serif;
     background: var(--background-color1) url(../images/background.png) no-repeat;
@@ -22,11 +31,14 @@ body {
     color: var(--text-color);
 }
 
-/* ********************************** Header ********************************** */
+/* ============================================================= */
+/* ======================  Header Section  ===================== */
+/* ============================================================= */
 header {
     background: linear-gradient(to bottom right , var(--background-color1) , var(--background-color2));
 }
 
+/* ---------- Common layout for header sections ---------- */
 header .section1,
 header .section2 {
     width: 80%;
@@ -38,6 +50,7 @@ header .section2 {
     align-items: center;
 }
 
+/* ---------- Header links & navigation items ---------- */
 header ul li {
     display: inline-block;
     position: relative;
@@ -54,6 +67,7 @@ header a {
     transition: color 0.3s;
 }
 
+/* ---------- Hover effects on links & icons ---------- */
 header li:hover > a,
 header li:hover > a > i {
     color: var(--secondary-color);
@@ -63,11 +77,14 @@ header .section1 li:hover > a > i {
     transform: rotateY(180deg);
 }
 
-/* start of Section 1 in Header */
+/* ============================================================= */
+/* ==========  Section 1: Top Header (social & info)  ========== */
+/* ============================================================= */
 header .section1 ul li:nth-child(3) a {
     text-transform: uppercase;
 }
 
+/* ---------- Animated border effect on hover ---------- */
 header .section1 li::before,
 header .section1 li::after {
     content: "";
@@ -92,14 +109,20 @@ header .section1 li:hover::before,
 header .section1 li:hover::after {
     height: 100%;
 }
-/* end of Section 1 in Header */
 
+/* ============================================================= */
+/* =====================  Divider Line  ======================== */
+/* ============================================================= */
 hr {
     width: 100%;
     border: 1px solid var(--secondary-color);
 }
 
-/* start of Section 2 in Header */
+/* ============================================================= */
+/* ==========  Section 2: Main Header (logo & menu)  =========== */
+/* ============================================================= */
+
+/* ---------- Logo styling ---------- */
 header .section2 figure img {
     width: 80px;
     height: 40px;
@@ -113,12 +136,14 @@ header .section2 figure figcaption {
     font-size: 18px;
 }
 
+/* ---------- Main navigation links ---------- */
 header .section2 .main-nav > ul > li > a {
     display: inline-block;
     padding: 6px;
     position: relative;
 }
 
+/* ---------- Dropdown menu styling ---------- */
 header .section2 .main-nav ul li .dropdown {
     padding: 15px;
     display: flex;
@@ -137,11 +162,13 @@ header .section2 .main-nav ul li .dropdown {
     z-index: 1;
 }
 
+/* ---------- Show dropdown on hover ---------- */
 header .section2 .main-nav > ul li:hover > .dropdown {
     transition: all 0.5s;
     scale: 1;
 }
 
+/* ---------- Dropdown columns ---------- */
 header .section2 .main-nav ul li .dropdown .dropdown-column {
     display: grid;
     grid-template-rows: auto 1fr;
@@ -153,6 +180,7 @@ header .section2 .main-nav ul li .dropdown .separated-column {
     flex-grow: 1;
 }
 
+/* ---------- Dropdown column headers ---------- */
 header .section2 .main-nav ul li .dropdown .dropdown-column h4 {
     color: var(--primary-color);
     text-transform: uppercase;
@@ -162,6 +190,7 @@ header .section2 .main-nav ul li .dropdown .dropdown-column h4 {
     border-bottom: 2px solid var(--secondary-color);
 }
 
+/* ---------- Dropdown list items ---------- */
 header .section2 .main-nav ul li .dropdown .dropdown-column ul {
     display: grid;
     grid-template-rows: repeat(auto-fit, auto);
@@ -174,6 +203,7 @@ header .section2 .main-nav ul li .dropdown .dropdown-column li {
     white-space: nowrap;
 }
 
+/* ---------- Navigation borders animation ---------- */
 header .section2 .main-nav > ul > li::before,
 header .section2 .main-nav > ul > li::after,
 header .section2 .main-nav > ul > li > a::before,
@@ -212,6 +242,7 @@ header .section2 .main-nav > ul > li > a::after {
     bottom: 0;
 }
 
+/* ---------- Hover animation on nav links ---------- */
 header .section2 .main-nav > ul > li:hover::before,
 header .section2 .main-nav > ul > li:hover::after {
     height: 100%;
@@ -222,6 +253,7 @@ header .section2 .main-nav > ul > li:hover > a::after {
     width: 100%;
 }
 
+/* ---------- Header icons (cart, user, etc.) ---------- */
 header .section2 .icons li {
     margin-left: 30px;
 }
@@ -235,6 +267,7 @@ header .section2 .icons li:hover i {
     color: var(--secondary-color);
 }
 
+/* ---------- Notification badge ---------- */
 header .section2 .icons ul :last-child {
     position: relative;
 }
@@ -259,8 +292,9 @@ header .section2 .icons ul li:last-child:hover .Notification-Badge {
     transform: translateY(-4px)
 }
 
-/* start of footer in Header */
-
+/* ============================================================= */
+/* ====================  Header Footer  ======================== */
+/* ============================================================= */
 header footer {
     width: 100%;
     padding: 10px;
@@ -278,17 +312,22 @@ header footer p a {
 }
 
 header footer p a:hover {
-    color: var(--secondary-color);
+    color: var(--background-color2);
 }
-/* end of footer in Header */
 
+
+/* ============================================================= */
+/* ====================  Main Section Styling  ================= */
+/* ============================================================= */
 .main-section {
     width: 100%;
-    height: calc(100vh - 142px);
+    height: calc(100vh - 142px); /* Full height minus header/footer */
     background: url(../images/main-section.png) no-repeat;
     background-size: 100% 100%;
     position: relative;
 }
+
+/* ---------- Centered content container ---------- */
 .main-section .content {
   position: absolute;
   left: 50%;
@@ -304,6 +343,7 @@ header footer p a:hover {
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
 }
 
+/* ---------- Decorative pretitle ---------- */
 .main-section .content .pretitle {
   font-family: "Great Vibes", cursive;
   color: var(--background-color2);
@@ -311,6 +351,7 @@ header footer p a:hover {
   margin-bottom: 8px;
 }
 
+/* ---------- Main title ---------- */
 .main-section .content .title {
   font-size: 48px;
   color: var(--background-color1);
@@ -318,6 +359,7 @@ header footer p a:hover {
   letter-spacing: 1px;
 }
 
+/* ---------- Title decoration bar ---------- */
 .main-section .content .title-deco {
   height: 6px;
   width: 80px;
@@ -327,6 +369,7 @@ header footer p a:hover {
   box-shadow: 0 4px 14px rgba(232, 94, 108, 0.12);
 }
 
+/* ---------- Subtitle / description text ---------- */
 .main-section .content .subtitle {
   font-size: 16px;
   line-height: 1.8;
@@ -334,6 +377,7 @@ header footer p a:hover {
   margin-bottom: 16px;
 }
 
+/* ---------- Call-to-action button ---------- */
 .main-section .content .cta {
   margin-top: 18px;
   display: inline-block;
@@ -349,6 +393,7 @@ header footer p a:hover {
   margin-inline-start: 12px;
 }
 
+/* ---------- Hover effect for CTA button ---------- */
 .main-section .content .cta:hover {
   transform: translateY(-4px);
   box-shadow: 0 10px 30px rgba(11, 11, 11, 0.12);
@@ -356,26 +401,35 @@ header footer p a:hover {
   color: var(--primary-color);
 }
 
-/* //////////////////////////////////////////////////////////////// */
 
-.second-section .container {
-    width: 90%;
-    height: 456px;
-    margin: 50px auto;
-    display: grid;
-    grid-template: 90px 1fr auto / repeat(4,1fr);
-    gap: 12px 40px;
-    position: relative;
+
+
+/* ============================================================= */
+/* =====================  Homewear Section  ===================== */
+/* ============================================================= */
+.Homewear {
+    margin: 50px 0 100px; /* Vertical spacing around the section */
 }
 
-.second-section .container .second-section-header {
-    grid-column: span 4;
+/* ---------- Main grid container ---------- */
+.Homewear .container {
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template: 90px 300px / repeat(4, 1fr); /* 2 rows, 4 columns */
+    column-gap: 40px;
+}
+
+/* ---------- Header section inside Homewear ---------- */
+.Homewear .container .Homewear-header {
+    grid-column: span 4; /* Header takes full width (4 columns) */
     display: flex;
     justify-content: space-between;
     position: relative;
 }
 
-.second-section .container .second-section-header .section-title {
+/* ---------- Title text ---------- */
+.Homewear .container .Homewear-header .section-title {
   font-size: 28px;
   font-weight: bold;
   color: var(--primary-color);
@@ -383,7 +437,8 @@ header footer p a:hover {
   letter-spacing: 2px;
 }
 
-.second-section .container .second-section-header::after {
+/* ---------- Underline line under header ---------- */
+.Homewear .container .Homewear-header::after {
     content: "";
     position: absolute;
     left: 0;
@@ -393,8 +448,143 @@ header footer p a:hover {
     background-color: var(--background-color2);
 }
 
-.second-section .container .second-section-header nav ul li,
-.second-section .container .second-section-header nav ul li a {
+/* ============================================================= */
+/* ===================  Homewear Item Styling  ================== */
+/* ============================================================= */
+
+/* ---------- Image container and transition setup ---------- */
+.Homewear .container .items .item-image,
+.Homewear .container .items .item-image img {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease;
+    contain: layout paint;
+}
+
+/* ---------- Image wrapper positioning ---------- */
+.Homewear .container .items .item-image {
+    position: relative;
+}
+
+/* ---------- Individual item box ---------- */
+.Homewear .container .items {
+    border: 1px solid var(--secondary-color);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    overflow: hidden;
+    position: relative;
+}
+
+/* ---------- Gradient overlay at bottom ---------- */
+.Homewear .container .items .item-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 7%;
+    background: linear-gradient(to top, var(--background-color1) 2%, transparent );
+}
+
+/* ---------- Caption container ---------- */
+.Homewear .container .items .item-image figcaption {
+    position: absolute;
+    left: 0;
+    bottom: -25px;
+    width: 100%;
+    text-align: center;
+    transition: all 0.5s;
+}
+
+/* ---------- Item name/title ---------- */
+.Homewear .container .items .item-image figcaption h2 {
+    font-size: 20px;
+    color: var(--secondary-color);
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+}
+
+/* ---------- "Shop now" button link ---------- */
+.Homewear .container .items .item-image figcaption a {
+    font-weight: bold;
+    font-size: 14px;
+    color: var(--background-color1);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 2px solid var(--background-color1);
+    padding: 6px 14px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+/* ---------- Hover effect for button ---------- */
+.Homewear .container .items .item-image figcaption a:hover {
+    background-color: var(--background-color2);
+    color: var(--secondary-color);
+}
+
+/* ---------- Hover zoom-in effect for image ---------- */
+.Homewear .container .items .item-image:hover img{
+    transform: scale(1.5);
+}
+
+/* ---------- Move caption upward on hover ---------- */
+.Homewear .container .items .item-image:hover figcaption {
+    transform: translateY(-45px);
+}
+
+
+
+
+/* ============================================================= */
+/* ==================  Modern Essentials Section  ================= */
+/* ============================================================= */
+.modern-essentials {
+    margin: 50px 0; /* Vertical spacing above and below the section */
+}
+
+/* ---------- Main grid container ---------- */
+.modern-essentials .container {
+    width: 90%;
+    height: 456px;
+    margin: 0 auto; /* Center container */
+    display: grid;
+    grid-template: 90px 1fr auto / repeat(4,1fr); /* Header + items + details rows */
+    gap: 12px 40px; /* Row & column gaps */
+    position: relative;
+}
+
+/* ============================================================= */
+/* ==================  Section Header Styling  ================== */
+/* ============================================================= */
+.modern-essentials .container .modern-essentials-header {
+    grid-column: span 4; /* Header spans all 4 columns */
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+/* ---------- Title text ---------- */
+.modern-essentials .container .modern-essentials-header .section-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* ---------- Underline below header ---------- */
+.modern-essentials .container .modern-essentials-header::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 40px;
+    width: 100%;
+    height: 1px;
+    background-color: var(--background-color2);
+}
+
+/* ---------- Navigation links inside header ---------- */
+.modern-essentials .container .modern-essentials-header nav ul li,
+.modern-essentials .container .modern-essentials-header nav ul li a {
     display: inline-block;
     font-size: 20px;
     margin-left: 8px;
@@ -402,12 +592,14 @@ header footer p a:hover {
     color: var(--primary-color);
 }
 
-.second-section .container .second-section-header nav ul li:last-child a {
+/* ---------- Active navigation link ---------- */
+.modern-essentials .container .modern-essentials-header nav ul li:last-child a {
     color: var(--background-color2);
     position: relative;
 }
 
-.second-section .container .second-section-header nav ul li:last-child a::after {
+/* ---------- Active link underline ---------- */
+.modern-essentials .container .modern-essentials-header nav ul li:last-child a::after {
     content: "";
     position: absolute;
     left: 0;
@@ -418,91 +610,108 @@ header footer p a:hover {
     background-color: var(--background-color2);
 }
 
-.second-section .container .items,
-.second-section .container .items .item-container,
-.second-section .container .items .item-container .front-face,
-.second-section .container .items .item-container .back-face {
+/* ============================================================= */
+/* ======================  3D Flip Items  ======================= */
+/* ============================================================= */
+
+/* ---------- Shared size for 3D cube faces ---------- */
+.modern-essentials .container .items,
+.modern-essentials .container .items .item-container,
+.modern-essentials .container .items .item-container .front-face,
+.modern-essentials .container .items .item-container .back-face {
     width: 100%;
     height: 100%;
 }
 
-.second-section .container .items {
-    perspective: 1500px;
+/* ---------- 3D effect container ---------- */
+.modern-essentials .container .items {
+    perspective: 1500px; /* Add depth for 3D rotation */
     border: 1px solid var(--secondary-color);
     box-shadow: 0 4px 15px rgba(0,0,0,0.5);
 }
 
-.second-section .container .items .item-container {
-    transform-style: preserve-3d;
+/* ---------- Cube wrapper ---------- */
+.modern-essentials .container .items .item-container {
+    transform-style: preserve-3d; /* Maintain 3D child transformations */
     transition: all 1s;
     position: relative;
 }
 
-.second-section .container .items:hover .item-container {
+/* ---------- Flip rotation on hover ---------- */
+.modern-essentials .container .items:hover .item-container {
     transform-origin: 50% 50% 20px;
     transform: rotateY(180deg);
 }
 
-.second-section .container .items .item-container .front-face,
-.second-section .container .items .item-container .back-face {
+/* ---------- Common face properties ---------- */
+.modern-essentials .container .items .item-container .front-face,
+.modern-essentials .container .items .item-container .back-face {
     position: absolute;
     top: 0;
     left: 0;
     overflow: hidden;
 }
 
-.second-section .container .items .item-container .front-face {
+/* ---------- Front face ---------- */
+.modern-essentials .container .items .item-container .front-face {
     z-index: 1;
     transform: translateZ(40px);
 }
 
-.second-section .container .items .item-container .back-face {
+/* ---------- Back face ---------- */
+.modern-essentials .container .items .item-container .back-face {
     transform: rotateY(180deg);
     position: relative;
 }
 
-.second-section .container .item1 .item-container .front-face {
+/* ============================================================= */
+/* ===================  Front & Back Images  ==================== */
+/* ============================================================= */
+.modern-essentials .container .item1 .item-container .front-face {
     background: url(../images/item1-front.png) no-repeat;
     background-size: 100% 100%;
 }
 
-.second-section .container .item1 .item-container .back-face {
+.modern-essentials .container .item1 .item-container .back-face {
     background: url(../images/item1-back.png) no-repeat;
     background-size: 100% 100%;
 }
 
-.second-section .container .item2 .item-container .front-face {
+.modern-essentials .container .item2 .item-container .front-face {
     background: url(../images/item2-front.png) no-repeat;
     background-size: 100% 100%;
 }
 
-.second-section .container .item2 .item-container .back-face {
+.modern-essentials .container .item2 .item-container .back-face {
     background: url(../images/item2-back.png) no-repeat;
     background-size: 100% 100%;
 }
 
-.second-section .container .item3 .item-container .front-face {
+.modern-essentials .container .item3 .item-container .front-face {
     background: url(../images/item3-front.png) no-repeat;
     background-size: 100% 100%;
 }
 
-.second-section .container .item3 .item-container .back-face {
+.modern-essentials .container .item3 .item-container .back-face {
     background: url(../images/item3-back.png) no-repeat;
     background-size: 100% 100%;
 }
 
-.second-section .container .item4 .item-container .front-face {
+.modern-essentials .container .item4 .item-container .front-face {
     background: url(../images/item4-front.png) no-repeat;
     background-size: 100% 100%;
 }
 
-.second-section .container .item4 .item-container .back-face {
+.modern-essentials .container .item4 .item-container .back-face {
     background: url(../images/item4-back.png) no-repeat;
     background-size: 100% 100%;
 }
 
-.second-section .container .items .item-container .right-face,
-.second-section .container .items .item-container .left-face {
+/* ============================================================= */
+/* ==================  Cube Side Faces Styling  ================= */
+/* ============================================================= */
+.modern-essentials .container .items .item-container .right-face,
+.modern-essentials .container .items .item-container .left-face {
     height: 100%;
     width: 40px;
     position: absolute;
@@ -510,20 +719,23 @@ header footer p a:hover {
     background-color: var(--background-color2);
 }
 
-.second-section .container .items .item-container .right-face {
+/* ---------- Right face ---------- */
+.modern-essentials .container .items .item-container .right-face {
     right: 0;
     transform-origin: 100% 50%;
     transform: rotateY(90deg);
 }
 
-.second-section .container .items .item-container .left-face {
+/* ---------- Left face ---------- */
+.modern-essentials .container .items .item-container .left-face {
     left: 0;
     transform-origin: 0% 50%;
     transform: rotateY(-90deg);
 }
 
-.second-section .container .items .item-container .top-face,
-.second-section .container .items .item-container .bottom-face {
+/* ---------- Top and bottom faces ---------- */
+.modern-essentials .container .items .item-container .top-face,
+.modern-essentials .container .items .item-container .bottom-face {
     height: 40px;
     width: 100%;
     position: absolute;
@@ -531,19 +743,26 @@ header footer p a:hover {
     background-color: var(--background-color2);
 }
 
-.second-section .container .items .item-container .top-face {
+/* ---------- Top face ---------- */
+.modern-essentials .container .items .item-container .top-face {
     top: 0;
     transform-origin: 50% 0%;
     transform: rotateX(90deg);
 }
 
-.second-section .container .items .item-container .bottom-face {
+/* ---------- Bottom face ---------- */
+.modern-essentials .container .items .item-container .bottom-face {
     bottom: 0;
     transform-origin: 50% 100%;
     transform: rotateX(-90deg);
 }
 
-.second-section .container .items .item-container .back-face .item-icon {
+/* ============================================================= */
+/* ===================  Back Face Icon Buttons  ================= */
+/* ============================================================= */
+
+/* ---------- Icon container ---------- */
+.modern-essentials .container .items .item-container .back-face .item-icon {
     position: absolute;
     left: 50%;
     bottom: 5%;
@@ -553,18 +772,22 @@ header footer p a:hover {
     transform: translateX(-50%);
 }
 
-.second-section .container .items .item-container .back-face .item-icon ul {
+/* ---------- Icon list ---------- */
+.modern-essentials .container .items .item-container .back-face .item-icon ul {
     width: 100%;
     height: 100%;
 }
-.second-section .container .items .item-container .back-face .item-icon ul li {
+
+/* ---------- Individual icon item ---------- */
+.modern-essentials .container .items .item-container .back-face .item-icon ul li {
     display: inline-block;
     width: calc(100% / 3);
     height: 100%;
     font-size: 20px;
 }
 
-.second-section .container .items .item-container .back-face .item-icon a {
+/* ---------- Icon link style ---------- */
+.modern-essentials .container .items .item-container .back-face .item-icon a {
     width: 100%;
     height: 100%;
     display: flex;
@@ -575,63 +798,87 @@ header footer p a:hover {
     border: 1px solid var(--background-color1);
 }
 
-.second-section .container .items .item-container .back-face .item-icon ul li:hover a i {
+/* ---------- Hover effect for icons ---------- */
+.modern-essentials .container .items .item-container .back-face .item-icon ul li:hover a i {
     color: var(--secondary-color);
 }
 
-.second-section .container .left-arrow,
-.second-section .container .right-arrow  {
+/* ============================================================= */
+/* ====================  Navigation Arrows  ===================== */
+/* ============================================================= */
+.modern-essentials .container .left-arrow,
+.modern-essentials .container .right-arrow {
     position: absolute;
     top: 252px;
     transform: translateY(calc(-50%));
 }
 
-.second-section .container .left-arrow {
+/* ---------- Arrow positions ---------- */
+.modern-essentials .container .left-arrow {
     left: -50px;
 }
-
-.second-section .container .right-arrow {
+.modern-essentials .container .right-arrow {
     right: -50px;
 }
 
-.second-section .container .left-arrow a,
-.second-section .container .right-arrow a {
+/* ---------- Arrow link styles ---------- */
+.modern-essentials .container .left-arrow a,
+.modern-essentials .container .right-arrow a {
     display: inline-block;
     color: var(--background-color2);
 }
 
-.second-section .container .left-arrow a i,
-.second-section .container .right-arrow a i {
+/* ---------- Arrow icon styles ---------- */
+.modern-essentials .container .left-arrow a i,
+.modern-essentials .container .right-arrow a i {
     font-size: 30px;
 }
 
-.second-section .container .left-arrow:hover a i,
-.second-section .container .right-arrow:hover a i {
+/* ---------- Hover effect for arrows ---------- */
+.modern-essentials .container .left-arrow:hover a i,
+.modern-essentials .container .right-arrow:hover a i {
     color: var(--background-color1);
 }
 
-.second-section .container .item-details {
+/* ============================================================= */
+/* =====================  Item Details Box  ===================== */
+/* ============================================================= */
+.modern-essentials .container .item-details {
     text-align: center;
+    border: 1px solid var(--secondary-color);
+    padding: 12px 8px;
+    box-shadow: 0 6px 18px rgba(11, 11, 11, 0.1);
+    transition: all 0.3s ease;
 }
 
-.second-section .container .item-details h2:first-child {
+/* ---------- Hover lift effect ---------- */
+.modern-essentials .container .item-details:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(11, 11, 11, 0.15);
+}
+
+/* ---------- Product name ---------- */
+.modern-essentials .container .item-details h2:first-child {
     font-size: 16px;
     font-weight: 500;
     color: var(--primary-color);
     text-transform: capitalize;
-    margin-bottom: 5px;
+    margin-bottom: 6px;
     letter-spacing: 0.5px;
 }
 
-.second-section .container .item-details h2:last-child {
+/* ---------- Product price ---------- */
+.modern-essentials .container .item-details h2:last-child {
     font-size: 15px;
     font-weight: 600;
-    color: var(--background-color2); 
+    color: var(--background-color2);
 }
 
-.second-section .container .item-details h2:last-child span {
+/* ---------- Old price (crossed out) ---------- */
+.modern-essentials .container .item-details h2:last-child span {
     font-size: 13px;
-    font-weight: normal;
+    font-weight: 400;
     text-decoration: line-through;
-    color: var(--accent-color); 
+    color: var(--accent-color);
+    margin-left: 6px;
 }
