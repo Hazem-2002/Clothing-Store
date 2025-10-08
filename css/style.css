@@ -1,3 +1,4 @@
+/* Reset some default styles for all elements */
 * {
     margin: 0;
     padding: 0;
@@ -6,6 +7,7 @@
     text-decoration: none;
 }
 
+/* Define CSS variables for colors */
 :root {
   --primary-color: #0D1B2A;       
   --secondary-color: #E9D5CA;    
@@ -15,6 +17,7 @@
   --text-color: #2B2D42;
 }
 
+/* Body base styling */
 body {
     font-family: "Mozilla Headline", sans-serif;
     background: var(--background-color1) url(../images/background.png) no-repeat;
@@ -27,6 +30,7 @@ header {
     background: linear-gradient(to bottom right , var(--background-color1) , var(--background-color2));
 }
 
+/* Shared styles for header sections (flexbox layout) */
 header .section1,
 header .section2 {
     width: 80%;
@@ -38,36 +42,39 @@ header .section2 {
     align-items: center;
 }
 
+/* Basic styling for list items in the header */
 header ul li {
     display: inline-block;
     position: relative;
 }
 
-header .section1 ul li {
-    margin-right: 5px;
-    padding: 0px 7px;
-}
-
+/* Default link style in header */
 header a {
     color: var(--primary-color);
     text-transform: capitalize;
     transition: color 0.3s;
 }
 
+/* Hover effect for links and icons inside links */
 header li:hover > a,
 header li:hover > a > i {
     color: var(--secondary-color);
 }
 
-header .section1 li:hover > a > i {
-    transform: rotateY(180deg);
+/* start of Section 1 in Header */
+
+/* Section1 list items spacing */
+header .section1 ul li {
+    margin-right: 5px;
+    padding: 0px 7px;
 }
 
-/* start of Section 1 in Header */
+/* Force third item in section1 to be uppercase */
 header .section1 ul li:nth-child(3) a {
     text-transform: uppercase;
 }
 
+/* Animated border effects for section1 list items */
 header .section1 li::before,
 header .section1 li::after {
     content: "";
@@ -88,24 +95,33 @@ header .section1 li::after {
     right: 0;
 }
 
+/* Expand borders on hover */
 header .section1 li:hover::before,
 header .section1 li:hover::after {
     height: 100%;
 }
+
+/* Rotate icons on hover in section1 */
+header .section1 li:hover > a > i {
+    transform: rotateY(180deg);
+}
 /* end of Section 1 in Header */
 
+/* Separator line in header */
 hr {
     width: 100%;
     border: 1px solid var(--secondary-color);
 }
 
 /* start of Section 2 in Header */
+/* Logo image */
 header .section2 figure img {
     width: 80px;
     height: 40px;
     vertical-align: middle;
 }
 
+/* Logo caption */
 header .section2 figure figcaption {
     display: inline;
     text-transform: uppercase;
@@ -113,12 +129,14 @@ header .section2 figure figcaption {
     font-size: 18px;
 }
 
+/* Top-level nav items */
 header .section2 .main-nav > ul > li > a {
     display: inline-block;
     padding: 6px;
     position: relative;
 }
 
+/* Dropdown menu hidden by default (scaled down) */
 header .section2 .main-nav ul li .dropdown {
     padding: 15px;
     display: flex;
@@ -137,22 +155,26 @@ header .section2 .main-nav ul li .dropdown {
     z-index: 1;
 }
 
+/* Show dropdown on hover */
 header .section2 .main-nav > ul li:hover > .dropdown {
     transition: all 0.5s;
     scale: 1;
 }
 
+/* Dropdown column layout */
 header .section2 .main-nav ul li .dropdown .dropdown-column {
     display: grid;
     grid-template-rows: auto 1fr;
     row-gap: 10px;
 }
 
+/* Add a separator line between dropdown columns */
 header .section2 .main-nav ul li .dropdown .separated-column {
     border-left: 1px dashed var(--secondary-color);
     flex-grow: 1;
 }
 
+/* Headings inside dropdown columns */
 header .section2 .main-nav ul li .dropdown .dropdown-column h4 {
     color: var(--primary-color);
     text-transform: uppercase;
@@ -162,6 +184,7 @@ header .section2 .main-nav ul li .dropdown .dropdown-column h4 {
     border-bottom: 2px solid var(--secondary-color);
 }
 
+/* List styling inside dropdown */
 header .section2 .main-nav ul li .dropdown .dropdown-column ul {
     display: grid;
     grid-template-rows: repeat(auto-fit, auto);
@@ -170,10 +193,12 @@ header .section2 .main-nav ul li .dropdown .dropdown-column ul {
     align-items: center;
 }
 
+/* Prevent dropdown list items from wrapping */
 header .section2 .main-nav ul li .dropdown .dropdown-column li {
     white-space: nowrap;
 }
 
+/* Animated border effect for nav items */
 header .section2 .main-nav > ul > li::before,
 header .section2 .main-nav > ul > li::after,
 header .section2 .main-nav > ul > li > a::before,
@@ -212,6 +237,7 @@ header .section2 .main-nav > ul > li > a::after {
     bottom: 0;
 }
 
+/* On hover, animate borders around nav items */
 header .section2 .main-nav > ul > li:hover::before,
 header .section2 .main-nav > ul > li:hover::after {
     height: 100%;
@@ -222,6 +248,7 @@ header .section2 .main-nav > ul > li:hover > a::after {
     width: 100%;
 }
 
+/* Styling for header icons (search, cart, etc.) */
 header .section2 .icons li {
     margin-left: 30px;
 }
@@ -231,10 +258,12 @@ header .section2 .icons i {
     transition: color 0.3s;
 }
 
+/* Change icon color on hover */
 header .section2 .icons li:hover i {
     color: var(--secondary-color);
 }
 
+/* Notification badge (for cart or messages) */
 header .section2 .icons ul :last-child {
     position: relative;
 }
@@ -255,12 +284,12 @@ header .section2 .icons ul li .Notification-Badge {
     transition: all 0.5s;
 }
 
+/* Slight hover animation for badge */
 header .section2 .icons ul li:last-child:hover .Notification-Badge {
     transform: translateY(-4px)
 }
 
 /* start of footer in Header */
-
 header footer {
     width: 100%;
     padding: 10px;
@@ -280,15 +309,18 @@ header footer p a {
 header footer p a:hover {
     color: var(--background-color2);
 }
-/* end of footer in Header */
+/* ********************************** End Of Header ********************************** */
 
+/* ********************************** Main hero section ********************************** */
 .main-section {
     width: 100%;
-    height: calc(100vh - 142px);
+    height: calc(100vh - 142px); /* full height minus header/footer */
     background: url(../images/main-section.png) no-repeat;
-    background-size: 100% 100%;
+    background-size: 100% 100%; /* stretch image to cover */
     position: relative;
 }
+
+/* Content box centered inside the main section */
 .main-section .content {
   position: absolute;
   left: 50%;
@@ -297,13 +329,14 @@ header footer p a:hover {
   width: 40%;
   text-transform: capitalize;
   text-align: center;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(6px);
+  background: rgba(255, 255, 255, 0.1); 
+  backdrop-filter: blur(6px); /* glass effect */
   padding: 40px 30px;
   border-radius: 20px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15); 
 }
 
+/* Small decorative text above the title */
 .main-section .content .pretitle {
   font-family: "Great Vibes", cursive;
   color: var(--background-color2);
@@ -311,6 +344,7 @@ header footer p a:hover {
   margin-bottom: 8px;
 }
 
+/* Main headline/title */
 .main-section .content .title {
   font-size: 48px;
   color: var(--background-color1);
@@ -318,6 +352,7 @@ header footer p a:hover {
   letter-spacing: 1px;
 }
 
+/* Decorative bar below the title */
 .main-section .content .title-deco {
   height: 6px;
   width: 80px;
@@ -327,6 +362,7 @@ header footer p a:hover {
   box-shadow: 0 4px 14px rgba(232, 94, 108, 0.12);
 }
 
+/* Subtitle/description text */
 .main-section .content .subtitle {
   font-size: 16px;
   line-height: 1.8;
@@ -334,21 +370,23 @@ header footer p a:hover {
   margin-bottom: 16px;
 }
 
+/* Call-to-action button */
 .main-section .content .cta {
   margin-top: 18px;
   display: inline-block;
   text-decoration: none;
   font-weight: 600;
   padding: 10px 22px;
-  border-radius: 999px;
+  border-radius: 999px; /* pill shape */
   border: 2px solid var(--secondary-color);
   transition: all 0.3s ease;
   background: transparent;
   color: var(--background-color1);
   box-shadow: 0 6px 18px rgba(11, 11, 11, 0.08);
-  margin-inline-start: 12px;
+  margin-inline-start: 12px; /* spacing between buttons if multiple */
 }
 
+/* Hover effect for call-to-action */
 .main-section .content .cta:hover {
   transform: translateY(-4px);
   box-shadow: 0 10px 30px rgba(11, 11, 11, 0.12);
@@ -356,28 +394,20 @@ header footer p a:hover {
   color: var(--primary-color);
 }
 
-/* //////////////////////////////////////////////////////////////// */
+/* ********************************** End Of Main hero section ********************************** */
 
-.Homewear {
-    margin: 50px 0 100px;
-}
+/* ********************************** General Section Header Styles ********************************** */
+/* ********************************** applies to all sections ********************************** */
 
-.Homewear .container {
-    width: 90%;
-    margin: 0 auto;
-    display: grid;
-    grid-template: 90px 300px / repeat(4, 1fr);
-    column-gap: 40px;
-}
-
-.Homewear .container .Homewear-header {
-    grid-column: span 4;
+.section .container .section-header {
+    grid-column: span 4; /* make header span full width of grid */
     display: flex;
     justify-content: space-between;
     position: relative;
 }
 
-.Homewear .container .Homewear-header .section-title {
+/* Title inside any section header */
+.section .container .section-header .section-title {
   font-size: 28px;
   font-weight: bold;
   color: var(--primary-color);
@@ -385,7 +415,8 @@ header footer p a:hover {
   letter-spacing: 2px;
 }
 
-.Homewear .container .Homewear-header::after {
+/* Decorative horizontal line under all section headers */
+.section .container .section-header::after {
     content: "";
     position: absolute;
     left: 0;
@@ -395,119 +426,9 @@ header footer p a:hover {
     background-color: var(--background-color2);
 }
 
-/* //////////////////////////////////////////////////////////// */
-.Homewear .container .items .item-image,
-.Homewear .container .items .item-image img {
-    width: 100%;
-    height: 100%;
-    transition: transform 0.5s ease;
-    contain: layout paint;
-}
-
-.Homewear .container .items .item-image {
-    position: relative;
-}
-
-.Homewear .container .items {
-    border: 1px solid var(--secondary-color);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-    overflow: hidden;
-    position: relative;
-}
-
-.Homewear .container .items .item-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 7%;
-    background: linear-gradient(to top, var(--background-color1) 2%, transparent );
-}
-
-.Homewear .container .items .item-image figcaption {
-    position: absolute;
-    left: 0;
-    bottom: -25px;
-    width: 100%;
-    text-align: center;
-    transition: all 0.5s;
-}
-
-.Homewear .container .items .item-image figcaption h2 {
-    font-size: 20px;
-    color: var(--secondary-color);
-    margin-bottom: 25px;
-    letter-spacing: 1px;
-}
-
-.Homewear .container .items .item-image figcaption a {
-    font-weight: bold;
-    font-size: 14px;
-    color: var(--background-color1);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border: 2px solid var(--background-color1);
-    padding: 6px 14px;
-    border-radius: 25px;
-    transition: all 0.3s ease;
-}
-
-.Homewear .container .items .item-image figcaption a:hover {
-    background-color: var(--background-color2);
-    color: var(--secondary-color);
-}
-
-.Homewear .container .items .item-image:hover img{
-    transform: scale(1.5);
-}
-
-.Homewear .container .items .item-image:hover figcaption {
-    transform: translateY(-45px);
-}
-
-/* //////////////////////////////////////////////////////////////// */
-
-.modern-essentials {
-    margin: 50px 0;
-}
-
-.modern-essentials .container {
-    width: 90%;
-    height: 456px;
-    margin: 0 auto;
-    display: grid;
-    grid-template: 90px 1fr auto / repeat(4,1fr);
-    gap: 12px 40px;
-    position: relative;
-}
-
-.modern-essentials .container .modern-essentials-header {
-    grid-column: span 4;
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-}
-
-.modern-essentials .container .modern-essentials-header .section-title {
-  font-size: 28px;
-  font-weight: bold;
-  color: var(--primary-color);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-.modern-essentials .container .modern-essentials-header::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 40px;
-    width: 100%;
-    height: 1px;
-    background-color: var(--background-color2);
-}
-
-.modern-essentials .container .modern-essentials-header nav ul li,
-.modern-essentials .container .modern-essentials-header nav ul li a {
+/* Navigation links inside section headers (applies to all sections) */
+.section .container .section-header nav ul li,
+.section .container .section-header nav ul li a {
     display: inline-block;
     font-size: 20px;
     margin-left: 8px;
@@ -515,12 +436,14 @@ header footer p a:hover {
     color: var(--primary-color);
 }
 
-.modern-essentials .container .modern-essentials-header nav ul li:last-child a {
+/* Special styling for the last nav link in any section header */
+.section .container .section-header nav ul li:last-child a {
     color: var(--background-color2);
     position: relative;
 }
 
-.modern-essentials .container .modern-essentials-header nav ul li:last-child a::after {
+/* Decorative underline effect for the last nav link */
+.section .container .section-header nav ul li:last-child a::after {
     content: "";
     position: absolute;
     left: 0;
@@ -531,6 +454,108 @@ header footer p a:hover {
     background-color: var(--background-color2);
 }
 
+/* ********************************** End Of General Section Header Styles ********************************** */
+
+/* ********************************** General Items Details Styles ********************************** */
+
+.section .container .item-details {
+    text-align: center;
+    border: 1px solid var(--secondary-color);
+    padding: 12px 8px;
+    box-shadow: 0 6px 18px rgba(11, 11, 11, 0.1);
+    transition: all 0.3s ease;
+}
+
+.section .container .item-details:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(11, 11, 11, 0.15);
+}
+
+.section .container .item-details h2:first-child {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--primary-color);
+    text-transform: capitalize;
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+}
+
+.section .container .item-details h2:last-child {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--background-color2);
+}
+
+.section .container .item-details h2:last-child span {
+    font-size: 13px;
+    font-weight: 400;
+    text-decoration: line-through;
+    color: var(--accent-color);
+    margin-left: 6px;
+}
+
+/* ********************************** End Of General Section Header Styles ********************************** */
+
+/* ********************************** General Arrows Styles ********************************** */
+/* ********************************** applies to all sections with arrows ********************************** */
+
+/* Base position for left & right arrows */
+.section .container .left-arrow,
+.section .container .right-arrow  {
+    position: absolute;
+    top: 252px; /* vertical alignment for arrows */
+    transform: translateY(calc(-50%)); /* center arrow vertically */
+}
+
+/* Position left arrow outside container */
+.section .container .left-arrow {
+    left: -50px;
+}
+
+/* Position right arrow outside container */
+.section .container .right-arrow {
+    right: -50px;
+}
+
+/* Arrow link base style */
+.section .container .left-arrow a,
+.section .container .right-arrow a {
+    display: inline-block;
+    color: var(--background-color2);
+}
+
+/* Icon size for arrows */
+.section .container .left-arrow a i,
+.section .container .right-arrow a i {
+    font-size: 30px;
+}
+
+/* Hover effect for arrow icons */
+.section .container .left-arrow:hover a i,
+.section .container .right-arrow:hover a i {
+    color: var(--background-color1);
+}
+
+/* ********************************** General Arrows Styles ********************************** */
+
+/* ********************************** Modern Essentials Section ********************************** */
+/* ********************************** 3D flip card effect for items ********************************** */
+
+.modern-essentials {
+    margin: 50px 0; /* vertical spacing around the section */
+}
+
+.modern-essentials .container {
+    width: 90%;
+    height: 456px;
+    margin: 0 auto;
+    display: grid;
+    grid-template: 90px 1fr auto / repeat(4,1fr); /* header, content, footer rows / 4 columns */
+    gap: 12px 40px;
+    position: relative;
+}
+
+/* Ensure items and their faces take full size */
 .modern-essentials .container .items,
 .modern-essentials .container .items .item-container,
 .modern-essentials .container .items .item-container .front-face,
@@ -539,23 +564,21 @@ header footer p a:hover {
     height: 100%;
 }
 
+/* Card container with 3D perspective */
 .modern-essentials .container .items {
-    perspective: 1500px;
+    perspective: 1500px; /* adds depth for 3D effect */
     border: 1px solid var(--secondary-color);
     box-shadow: 0 4px 15px rgba(0,0,0,0.5);
 }
 
+/* Inner container for flipping */
 .modern-essentials .container .items .item-container {
     transform-style: preserve-3d;
     transition: all 1s;
     position: relative;
 }
 
-.modern-essentials .container .items:hover .item-container {
-    transform-origin: 50% 50% 20px;
-    transform: rotateY(180deg);
-}
-
+/* Front and back faces of the card */
 .modern-essentials .container .items .item-container .front-face,
 .modern-essentials .container .items .item-container .back-face {
     position: absolute;
@@ -564,56 +587,53 @@ header footer p a:hover {
     overflow: hidden;
 }
 
+/* Front face stays on top */
 .modern-essentials .container .items .item-container .front-face {
     z-index: 1;
-    transform: translateZ(40px);
+    transform: translateZ(40px); /* slight depth */
 }
 
+/* Back face rotated 180 degrees */
 .modern-essentials .container .items .item-container .back-face {
     transform: rotateY(180deg);
     position: relative;
 }
 
+/* Background images for each card (front & back) */
 .modern-essentials .container .item1 .item-container .front-face {
     background: url(../images/item1-front.png) no-repeat;
     background-size: 100% 100%;
 }
-
 .modern-essentials .container .item1 .item-container .back-face {
     background: url(../images/item1-back.png) no-repeat;
     background-size: 100% 100%;
 }
-
 .modern-essentials .container .item2 .item-container .front-face {
     background: url(../images/item2-front.png) no-repeat;
     background-size: 100% 100%;
 }
-
 .modern-essentials .container .item2 .item-container .back-face {
     background: url(../images/item2-back.png) no-repeat;
     background-size: 100% 100%;
 }
-
 .modern-essentials .container .item3 .item-container .front-face {
     background: url(../images/item3-front.png) no-repeat;
     background-size: 100% 100%;
 }
-
 .modern-essentials .container .item3 .item-container .back-face {
     background: url(../images/item3-back.png) no-repeat;
     background-size: 100% 100%;
 }
-
 .modern-essentials .container .item4 .item-container .front-face {
     background: url(../images/item4-front.png) no-repeat;
     background-size: 100% 100%;
 }
-
 .modern-essentials .container .item4 .item-container .back-face {
     background: url(../images/item4-back.png) no-repeat;
     background-size: 100% 100%;
 }
 
+/* Side faces (right & left) */
 .modern-essentials .container .items .item-container .right-face,
 .modern-essentials .container .items .item-container .left-face {
     height: 100%;
@@ -635,6 +655,7 @@ header footer p a:hover {
     transform: rotateY(-90deg);
 }
 
+/* Top and bottom faces */
 .modern-essentials .container .items .item-container .top-face,
 .modern-essentials .container .items .item-container .bottom-face {
     height: 40px;
@@ -656,6 +677,7 @@ header footer p a:hover {
     transform: rotateX(-90deg);
 }
 
+/* Icons on the back face */
 .modern-essentials .container .items .item-container .back-face .item-icon {
     position: absolute;
     left: 50%;
@@ -663,6 +685,8 @@ header footer p a:hover {
     width: 70%;
     height: 12%;
     font-size: 0;
+    opacity: 0;
+    transition: opacity 2s;
     transform: translateX(-50%);
 }
 
@@ -670,6 +694,7 @@ header footer p a:hover {
     width: 100%;
     height: 100%;
 }
+
 .modern-essentials .container .items .item-container .back-face .item-icon ul li {
     display: inline-block;
     width: calc(100% / 3);
@@ -677,6 +702,7 @@ header footer p a:hover {
     font-size: 20px;
 }
 
+/* Styling for icons (add to cart, wishlist, etc.) */
 .modern-essentials .container .items .item-container .back-face .item-icon a {
     width: 100%;
     height: 100%;
@@ -688,73 +714,264 @@ header footer p a:hover {
     border: 1px solid var(--background-color1);
 }
 
+/* Rotate on hover to show the back face */
+.modern-essentials .container .items:hover .item-container {
+    transform-origin: 50% 50% 20px;
+    transform: rotateY(180deg);
+}
+
+.modern-essentials .container .items:hover .item-container .back-face .item-icon {
+    opacity: 1;
+}
+
+/* Hover effect for icons */
 .modern-essentials .container .items .item-container .back-face .item-icon ul li:hover a i {
     color: var(--secondary-color);
 }
 
-.modern-essentials .container .left-arrow,
-.modern-essentials .container .right-arrow  {
-    position: absolute;
-    top: 252px;
-    transform: translateY(calc(-50%));
+/* ********************************** End Of Modern Essentials Section ********************************** */
+
+/* ********************************** Homewear Section ********************************** */
+/* ********************************** image zoom + caption reveal on hover ********************************** */
+
+.Homewear {
+    margin: 50px 0 100px; /* spacing above and below section */
 }
 
-.modern-essentials .container .left-arrow {
-    left: -50px;
+.Homewear .container {
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template: 90px 300px / repeat(4, 1fr); /* header row + image row / 4 columns */
+    column-gap: 40px;
+    position: relative;
 }
 
-.modern-essentials .container .right-arrow {
-    right: -50px;
+/* Ensure item images fill their container */
+.Homewear .container .items .item-image,
+.Homewear .container .items .item-image img {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease; /* smooth zoom effect */
+    contain: layout paint; /* optimize rendering */
 }
 
-.modern-essentials .container .left-arrow a,
-.modern-essentials .container .right-arrow a {
-    display: inline-block;
-    color: var(--background-color2);
+/* Image wrapper for positioning overlay and captions */
+.Homewear .container .items .item-image {
+    position: relative;
 }
 
-.modern-essentials .container .left-arrow a i,
-.modern-essentials .container .right-arrow a i {
-    font-size: 30px;
-}
-
-.modern-essentials .container .left-arrow:hover a i,
-.modern-essentials .container .right-arrow:hover a i {
-    color: var(--background-color1);
-}
-
-.modern-essentials .container .item-details {
-    text-align: center;
+/* Individual item card */
+.Homewear .container .items {
     border: 1px solid var(--secondary-color);
-    padding: 12px 8px;
-    box-shadow: 0 6px 18px rgba(11, 11, 11, 0.1);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    transition: all 0.5s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Gradient overlay at the bottom of the image */
+.Homewear .container .items .item-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 7%;
+    background: linear-gradient(to top, var(--background-color1) 2%, transparent);
+}
+
+/* Caption container (hidden initially below the image) */
+.Homewear .container .items .item-image figcaption {
+    position: absolute;
+    left: 0;
+    bottom: -25px;
+    width: 100%;
+    text-align: center;
+    transition: all 0.5s;
+}
+
+/* Caption title text */
+.Homewear .container .items .item-image figcaption h2 {
+    font-size: 20px;
+    color: var(--secondary-color);
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+}
+
+/* Caption button link */
+.Homewear .container .items .item-image figcaption a {
+    font-weight: bold;
+    font-size: 14px;
+    color: var(--background-color1);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 2px solid var(--background-color1);
+    padding: 6px 14px;
+    border-radius: 25px;
     transition: all 0.3s ease;
 }
 
-.modern-essentials .container .item-details:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 24px rgba(11, 11, 11, 0.15);
+/* Hover effect for caption button */
+.Homewear .container .items .item-image figcaption a:hover {
+    background-color: var(--background-color2);
+    color: var(--secondary-color);
 }
 
-.modern-essentials .container .item-details h2:first-child {
-    font-size: 16px;
-    font-weight: 500;
+/* Card hover: increase shadow */
+.Homewear .container .items:hover {
+    box-shadow: 0 10px 25px rgba(0,0,0,0.45);
+}
+
+/* Image hover: zoom in */
+.Homewear .container .items .item-image:hover img {
+    transform: scale(1.5);
+}
+
+/* Caption hover: move upward to reveal */
+.Homewear .container .items .item-image:hover figcaption {
+    transform: translateY(-45px);
+}
+
+/* ********************************** End Of Homewear Section ********************************** */
+
+/* ********************************** Shoes Section ********************************** */
+/* ********************************** product cards with hover effect ********************************** */
+
+.shoes {
+    margin: 100px 0; /* spacing above and below section */
+}
+
+.shoes .container {
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template: 90px 280px auto / repeat(4, 1fr); /* header row + image row + details row / 4 columns */
+    gap: 12px 40px; /* row-gap / column-gap */
+    position: relative;
+}
+
+/* Product card container */
+.shoes .container .items {
+    border: 1px solid var(--secondary-color);
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px; /* rounded corners */
+    box-shadow: 0 0px 15px rgba(0,0,0,0.45); /* subtle shadow */
+    transition: all 0.3s ease;
+}
+
+/* Front and back faces (overlay effect) */
+.shoes .container .items .front-face,
+.shoes .container .items .back-face {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 0.7s;
+}
+
+/* Front face hidden by default */
+.shoes .container .items .front-face {
+    transform: translateY(-100%);
+    opacity: 0;
+    z-index: 1;
+}
+
+/* Background images for each item (front & back) */
+.shoes .container .item1 .front-face {
+    background: url(../images/shoes-item1-front.png) no-repeat;
+    background-size: 100% 100%;
+}
+.shoes .container .item1 .back-face {
+    background: url(../images/shoes-item1-back.png) no-repeat;
+    background-size: 100% 100%;
+}
+.shoes .container .item2 .front-face {
+    background: url(../images/shoes-item2-front.png) no-repeat;
+    background-size: 100% 100%;
+}
+.shoes .container .item2 .back-face {
+    background: url(../images/shoes-item2-back.png) no-repeat;
+    background-size: 100% 100%;
+}
+.shoes .container .item3 .front-face {
+    background: url(../images/shoes-item3-front.png) no-repeat;
+    background-size: 100% 100%;
+}
+.shoes .container .item3 .back-face {
+    background: url(../images/shoes-item3-back.png) no-repeat;
+    background-size: 100% 100%;
+}
+.shoes .container .item4 .front-face {
+    background: url(../images/shoes-item4-front.png) no-repeat;
+    background-size: 100% 100%;
+}
+.shoes .container .item4 .back-face {
+    background: url(../images/shoes-item4-back.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+/* Hover effect for product card */
+.shoes .container .items:hover {
+    transform: translateY(-8px); /* lift card */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.56); /* stronger shadow */
+}
+
+/* Show front face on hover */
+.shoes .container .items:hover .front-face {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Show icons on hover */
+.shoes .container .items:hover .front-face .item-icon {
+    opacity: 1;
+}
+
+/* Icon container (top-right corner) */
+.shoes .container .items .front-face .item-icon {
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    font-size: 0;
+    opacity: 0;
+    transition: all 0.6s ease 0.3s; /* delay for smooth effect */
+    background-color: var(--background-color1);
+    border-radius: 0 12px; 
+    box-shadow: -2px 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Vertical list of icons */
+.shoes .container .items .front-face .item-icon ul {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+/* Each icon list item */
+.shoes .container .items .front-face .item-icon ul li {
+    width: 40px;
+    height: calc(100% / 3);
+    font-size: 20px;
+    padding: 10px 15px;
+}
+
+/* Icon link styling */
+.shoes .container .items .front-face .item-icon a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: var(--primary-color);
-    text-transform: capitalize;
-    margin-bottom: 6px;
-    letter-spacing: 0.5px;
+    border: 1px solid var(--background-color1);
+    transition: color 0.3s ease, background-color 0.3s ease;
 }
 
-.modern-essentials .container .item-details h2:last-child {
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--background-color2);
+/* Hover effect for icons */
+.shoes .container .items .front-face .item-icon ul li:hover a i {
+    color: var(--secondary-color);
+    transform: scale(1.1); /* small zoom */
 }
 
-.modern-essentials .container .item-details h2:last-child span {
-    font-size: 13px;
-    font-weight: 400;
-    text-decoration: line-through;
-    color: var(--accent-color);
-    margin-left: 6px;
-}
+/* ********************************** End Of Shoes Section ********************************** */
