@@ -9,12 +9,12 @@
 
 /* Define CSS variables for colors */
 :root {
-  --primary-color: #0D1B2A;       
-  --secondary-color: #E9D5CA;    
-  --accent-color: #FF6B6B;      
-  --background-color1: #D4B88E;
-  --background-color2: #B58E62;    
-  --text-color: #2B2D42;
+    --secondary-color: #E9D5CA;    
+    --accent-color: #FF6B6B;      
+    --background-color1: #D4B88E;
+    --background-color2: #B58E62;    
+    --text-color: #2B2D42;
+    --primary-color: #0D1B2A;     
 }
 
 /* Body base styling */
@@ -322,76 +322,76 @@ header footer p a:hover {
 
 /* Content box centered inside the main section */
 .main-section .content {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 40%;
-  text-transform: capitalize;
-  text-align: center;
-  background: rgba(255, 255, 255, 0.1); 
-  backdrop-filter: blur(6px); /* glass effect */
-  padding: 40px 30px;
-  border-radius: 20px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15); 
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    text-transform: capitalize;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(6px); /* glass effect */
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15); 
+    position: absolute;
 }
 
 /* Small decorative text above the title */
 .main-section .content .pretitle {
-  font-family: "Great Vibes", cursive;
-  color: var(--background-color2);
-  font-size: 36px;
-  margin-bottom: 8px;
+    color: var(--background-color2);
+    font-size: 36px;
+    margin-bottom: 8px;
+    font-family: "Great Vibes", cursive;
 }
 
 /* Main headline/title */
 .main-section .content .title {
-  font-size: 48px;
-  color: var(--background-color1);
-  font-weight: bold;
-  letter-spacing: 1px;
+    color: var(--background-color1);
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 48px;
 }
 
 /* Decorative bar below the title */
 .main-section .content .title-deco {
-  height: 6px;
-  width: 80px;
-  background: var(--background-color1);
-  border-radius: 50px;
-  margin: 18px auto;
-  box-shadow: 0 4px 14px rgba(232, 94, 108, 0.12);
+    width: 80px;
+    background: var(--background-color1);
+    border-radius: 50px;
+    margin: 18px auto;
+    box-shadow: 0 4px 14px rgba(232, 94, 108, 0.12);
+    height: 6px;
 }
 
 /* Subtitle/description text */
 .main-section .content .subtitle {
-  font-size: 16px;
-  line-height: 1.8;
-  color: var(--secondary-color);
-  margin-bottom: 16px;
+    line-height: 1.8;
+    color: var(--secondary-color);
+    margin-bottom: 16px;
+    font-size: 16px;
 }
 
 /* Call-to-action button */
 .main-section .content .cta {
-  margin-top: 18px;
-  display: inline-block;
-  text-decoration: none;
-  font-weight: 600;
-  padding: 10px 22px;
-  border-radius: 999px; /* pill shape */
-  border: 2px solid var(--secondary-color);
-  transition: all 0.3s ease;
-  background: transparent;
-  color: var(--background-color1);
-  box-shadow: 0 6px 18px rgba(11, 11, 11, 0.08);
-  margin-inline-start: 12px; /* spacing between buttons if multiple */
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 22px;
+    border-radius: 999px; /* pill shape */
+    border: 2px solid var(--secondary-color);
+    transition: all 0.3s ease;
+    background: transparent;
+    color: var(--background-color1);
+    box-shadow: 0 6px 18px rgba(11, 11, 11, 0.08);
+    margin-inline-start: 12px; /* spacing between buttons if multiple */
+    margin-top: 18px;
 }
 
 /* Hover effect for call-to-action */
 .main-section .content .cta:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 30px rgba(11, 11, 11, 0.12);
-  background-color: var(--secondary-color);
-  color: var(--primary-color);
+    box-shadow: 0 10px 30px rgba(11, 11, 11, 0.12);
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    transform: translateY(-4px);
 }
 
 /* ********************************** End Of Main hero section ********************************** */
@@ -408,11 +408,11 @@ header footer p a:hover {
 
 /* Title inside any section header */
 .section .container .section-header .section-title {
-  font-size: 28px;
-  font-weight: bold;
-  color: var(--primary-color);
-  text-transform: uppercase;
-  letter-spacing: 2px;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 28px;
 }
 
 /* Decorative horizontal line under all section headers */
@@ -464,6 +464,8 @@ header footer p a:hover {
     padding: 12px 8px;
     box-shadow: 0 6px 18px rgba(11, 11, 11, 0.1);
     transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(6px); 
 }
 
 .section .container .item-details:hover {
@@ -542,7 +544,7 @@ header footer p a:hover {
 /* ********************************** 3D flip card effect for items ********************************** */
 
 .modern-essentials {
-    margin: 50px 0; /* vertical spacing around the section */
+    margin: 100px 0; /* vertical spacing around the section */
 }
 
 .modern-essentials .container {
@@ -735,15 +737,15 @@ header footer p a:hover {
 /* ********************************** image zoom + caption reveal on hover ********************************** */
 
 .Homewear {
-    margin: 50px 0 100px; /* spacing above and below section */
+    margin: 100px 0 100px; /* spacing above and below section */
 }
 
 .Homewear .container {
     width: 90%;
     margin: 0 auto;
     display: grid;
-    grid-template: 90px 300px / repeat(4, 1fr); /* header row + image row / 4 columns */
-    column-gap: 40px;
+    grid-template: 90px 300px auto / repeat(4, 1fr); /* header row + image row / 4 columns */
+    gap: 12px 40px;
     position: relative;
 }
 
@@ -975,3 +977,314 @@ header footer p a:hover {
 }
 
 /* ********************************** End Of Shoes Section ********************************** */
+
+.collections {
+    margin: 100px 0;
+}
+
+.collections .container {
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template: 90px 290px auto / repeat(3,1fr);
+    gap: 12px 40px;
+    position: relative;
+}
+
+.collections .container .section-header {
+    grid-column: span 3;
+}
+
+.collections .container .items,
+.collections .container .items img{
+    width: 100%;
+    height: 100%;
+}
+
+.collections .container .items {
+    border-radius:4px;
+    box-shadow: 0 0 15px 0 rgba(0,0,0,0.3);
+    overflow:hidden;
+}
+
+.collections .container .items:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px 0 rgba(0,0,0,0.35);
+}
+
+.collections .container .item-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 5px;
+    padding: 15px;
+}
+
+.collections .container .item-details .meta {
+    color: #555;
+    font-weight: bold;
+    letter-spacing:0.6px;
+    font-size:14px;
+    margin: 10px 0;
+}
+
+.collections .container .item-details .title a {
+    font-size: 22px;
+    line-height: 1.25;
+    font-family: "Playfair Display", serif;
+    color: var(--primary-color);
+}
+
+.collections .container .item1:hover ~ .item-details:nth-child(7) .title a,
+.collections .container .item2:hover ~ .item-details:nth-child(8) .title a,
+.collections .container .item3:hover ~ .item-details:nth-child(9) .title a,
+.collections .container .item-details:hover .title a {
+    color: var(--background-color2);
+}
+
+.collections .container .item-details .desc {
+    font-size:13px;
+    line-height:1.6;
+    color: #555;
+}
+
+.collections .container .item-details .read-more {
+    font-size: 14px;
+    color: var(--primary-color);
+    font-weight: bold;
+    width: fit-content;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+
+.collections .container .item-details .read-more:hover {
+    transform: scale(1.07);
+}
+
+/* /////////////////////////////////////////////////////////////////////// */
+
+.features {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 70px 0;
+    background: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(6px); 
+    border-radius: 16px;
+    margin: 100px auto;
+    width: 90%;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--secondary-color);
+}
+
+.features .feature-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 15px;
+    transition: transform 0.4s ease;
+    cursor: pointer;
+}
+
+.features .feature-box .icons {
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    position: relative;
+}
+
+.features .feature-box .icons i {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.4s ease;
+    font-size: 40px;
+    color: #666;
+    opacity: 1;
+}
+
+.features .feature-box .icons .front {
+    opacity: 0;
+    transform: translate(-50%, 150%);
+}
+
+.features .feature-box:hover .icons .back {
+    transform: translate(-50%, -150%);
+    opacity: 0;
+}
+
+.features .feature-box:hover .icons .front {
+    transform: translate(-50%, -50%);
+    color: var(--primary-color);
+    opacity: 1;
+}
+
+.features .feature-box h3 {
+    color: var(--primary-color);
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.features .feature-box:hover h3 {
+    color: var(--background-color2);
+}
+
+.features .feature-box p {
+    font-size: 14px;
+    color: #555;
+}
+
+.features .feature-box:hover p {
+    color: var(--primary-color);
+}
+
+.features .feature-box:hover {
+    transform: translateY(-5px);
+}
+
+/* ///////////////////////////////////////////////// */
+
+footer {
+    background-color: black;
+}
+
+footer .subscribe {
+    width: 85%;
+    margin: 0px auto;
+    padding: 20px 0;
+    color: white;
+    line-height: 1.6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+footer .subscribe article h2 {
+    text-transform: capitalize;
+    color: var(--background-color1);
+}
+
+footer .subscribe .subscribe-field {
+    display: flex;
+    column-gap: 8px;
+}
+
+footer .subscribe .subscribe-field input {
+    padding: 0 10px;
+    width: 300px;
+    border: 0;
+    outline: 0;
+    background-color: #EAD9BD;
+}
+
+footer .subscribe .subscribe-field button {
+    height: 40px;
+    padding: 0 10px;
+    border: 0;
+    font-weight: bold;
+    font-size: 15px;
+    background-color: var(--background-color1);
+}
+
+footer .subscribe .subscribe-field button:hover {
+    background-color: var(--background-color2);
+    color: var(--secondary-color);
+}
+
+footer .subscribe nav ul li {
+    display: inline-block;
+    margin-left: 16px;
+} 
+
+footer .subscribe nav ul li a {
+    display: inline-block;
+    color: #ccc;
+    font-size: 20px;
+}
+
+footer .subscribe nav ul li:hover a {
+    color: #fff;
+}
+
+footer .sections-links {
+    width: 85%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+footer .sections-links .logo {
+    display: flex;
+    column-gap: 6px;
+}
+
+footer .sections-links .logo img {
+    width: 80px;
+    height: 80px;
+    vertical-align: middle;
+}
+
+footer .sections-links .logo h2 {
+    color: var(--background-color1);
+    text-transform: capitalize;
+}
+
+footer .sections-links .logo h2 span{
+    font-weight: normal;
+    font-size: 19px;
+}
+
+footer .sections-links h3 {
+    color: var(--background-color1);
+    text-transform: capitalize;
+    margin-bottom: 12px;
+    font-size: 18px;
+}
+
+footer .sections-links a {
+    color: #bbb;
+    text-transform: capitalize;
+    line-height: 1.6;
+}
+
+footer .sections-links a:hover {
+    text-decoration: underline;
+    color: #fff;
+}
+
+footer .copy-right {
+    padding: 15px;
+}
+
+footer .copy-right p {
+    text-align: center;
+    color: #fff;
+}
+
+footer .copy-right p i {
+    font-size: 18px;
+    color: var(--background-color1);
+    opacity: 1;
+    animation-name: heart;
+    animation-duration: 0.75s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+@keyframes heart {
+    100% {opacity: 0;};
+}
+
+footer .copy-right p a {
+    color: var(--background-color1);
+    font-weight: bold;
+}
+
+footer .copy-right p a:hover {
+    text-decoration: underline;
+}
