@@ -20,9 +20,13 @@
 /* Body base styling */
 body {
     font-family: "Mozilla Headline", sans-serif;
-    background: var(--background-color1) url(../images/background.png) no-repeat;
-    background-size: cover;
     color: var(--text-color);
+    background: 
+    linear-gradient(rgba(0,0,0,0.08)),
+    url('../images/background.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 /* ********************************** Header ********************************** */
@@ -399,6 +403,14 @@ header footer p a:hover {
 /* ********************************** General Section Header Styles ********************************** */
 /* ********************************** applies to all sections ********************************** */
 
+.section {
+    padding: 50px 0;
+    backdrop-filter: blur(2px);
+    background-color: rgba(255, 255, 255, 0.15);
+    display: flex;
+    align-items: center;
+}
+
 .section .container .section-header {
     grid-column: span 4; /* make header span full width of grid */
     display: flex;
@@ -407,12 +419,13 @@ header footer p a:hover {
 }
 
 /* Title inside any section header */
-.section .container .section-header .section-title {
+.section .container .section-title {
     font-weight: bold;
     color: var(--primary-color);
     text-transform: uppercase;
     letter-spacing: 2px;
     font-size: 28px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
 
 /* Decorative horizontal line under all section headers */
@@ -455,6 +468,20 @@ header footer p a:hover {
 }
 
 /* ********************************** End Of General Section Header Styles ********************************** */
+.section .items {
+    perspective: 3500px; /* adds depth for 3D effect */
+    border: 1px solid var(--secondary-color);
+    box-shadow: 0 0px 15px 1px rgba(0,0,0,0.4);
+    transition: all 0.25s;
+    border: 1px solid var(--secondary-color);
+    overflow: hidden;
+    position: relative;
+    border-radius: 12px; /* rounded corners */
+}
+
+.section .items:hover {
+    box-shadow: 0 4px 15px 1px rgba(0,0,0,0.4),0 -4px 15px 1px rgba(0,0,0,0.4);
+}
 
 /* ********************************** General Items Details Styles ********************************** */
 
@@ -485,7 +512,7 @@ header footer p a:hover {
 .section .container .item-details h2:last-child {
     font-size: 15px;
     font-weight: 600;
-    color: var(--background-color2);
+    /* color: var(--background-color2); */
 }
 
 .section .container .item-details h2:last-child span {
@@ -496,6 +523,14 @@ header footer p a:hover {
     margin-left: 6px;
 }
 
+.item1:hover ~ .item-details:nth-of-type(1),
+.item2:hover ~ .item-details:nth-of-type(2),
+.item3:hover ~ .item-details:nth-of-type(3),
+.item4:hover ~ .item-details:nth-of-type(4) {
+    transform: translateY(-4px);
+}
+
+
 /* ********************************** End Of General Section Header Styles ********************************** */
 
 /* ********************************** General Arrows Styles ********************************** */
@@ -505,8 +540,8 @@ header footer p a:hover {
 .section .container .left-arrow,
 .section .container .right-arrow  {
     position: absolute;
-    top: 252px; /* vertical alignment for arrows */
-    transform: translateY(calc(-50%)); /* center arrow vertically */
+    top: 50%; /* vertical alignment for arrows */
+    transform: translateY(-50%); /* center arrow vertically */
 }
 
 /* Position left arrow outside container */
@@ -538,21 +573,25 @@ header footer p a:hover {
     color: var(--background-color1);
 }
 
+.section .left-arrow:hover,
+.section .right-arrow:hover {
+    transform: translateY(-50%) scale(1.1);
+}
+
 /* ********************************** General Arrows Styles ********************************** */
 
 /* ********************************** Modern Essentials Section ********************************** */
 /* ********************************** 3D flip card effect for items ********************************** */
 
 .modern-essentials {
-    margin: 100px 0; /* vertical spacing around the section */
+    margin:  100px 0; /* vertical spacing around the section */
 }
 
 .modern-essentials .container {
     width: 90%;
-    height: 456px;
     margin: 0 auto;
     display: grid;
-    grid-template: 90px 1fr auto / repeat(4,1fr); /* header, content, footer rows / 4 columns */
+    grid-template: 90px 340px auto / repeat(4,1fr); /* header, content, footer rows / 4 columns */
     gap: 12px 40px;
     position: relative;
 }
@@ -564,13 +603,6 @@ header footer p a:hover {
 .modern-essentials .container .items .item-container .back-face {
     width: 100%;
     height: 100%;
-}
-
-/* Card container with 3D perspective */
-.modern-essentials .container .items {
-    perspective: 1500px; /* adds depth for 3D effect */
-    border: 1px solid var(--secondary-color);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
 }
 
 /* Inner container for flipping */
@@ -737,14 +769,14 @@ header footer p a:hover {
 /* ********************************** image zoom + caption reveal on hover ********************************** */
 
 .Homewear {
-    margin: 100px 0 100px; /* spacing above and below section */
+    margin: 100px 0; /* spacing above and below section */
 }
 
 .Homewear .container {
     width: 90%;
     margin: 0 auto;
     display: grid;
-    grid-template: 90px 300px auto / repeat(4, 1fr); /* header row + image row / 4 columns */
+    grid-template: 90px 360px auto / repeat(4, 1fr); /* header row + image row / 4 columns */
     gap: 12px 40px;
     position: relative;
 }
@@ -760,15 +792,6 @@ header footer p a:hover {
 
 /* Image wrapper for positioning overlay and captions */
 .Homewear .container .items .item-image {
-    position: relative;
-}
-
-/* Individual item card */
-.Homewear .container .items {
-    border: 1px solid var(--secondary-color);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-    transition: all 0.5s ease;
-    overflow: hidden;
     position: relative;
 }
 
@@ -819,22 +842,96 @@ header footer p a:hover {
     color: var(--secondary-color);
 }
 
-/* Card hover: increase shadow */
-.Homewear .container .items:hover {
-    box-shadow: 0 10px 25px rgba(0,0,0,0.45);
-}
-
 /* Image hover: zoom in */
 .Homewear .container .items .item-image:hover img {
-    transform: scale(1.5);
+    transform: scale(1.3);
 }
 
 /* Caption hover: move upward to reveal */
 .Homewear .container .items .item-image:hover figcaption {
-    transform: translateY(-45px);
+    transform: translateY(-55px);
 }
 
 /* ********************************** End Of Homewear Section ********************************** */
+
+.testimonial .container {
+    width: 45%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 40px;
+    position: relative;
+    background: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(6px); 
+    box-sizing: content-box;
+    padding: 30px 250px;
+}
+.testimonial .container .section-title {
+    font-size: 24px;
+    position: relative;
+}
+
+.testimonial .container .section-title::before {
+    content: "";
+    position: absolute;
+    top: 150%;
+    left: 50%;
+    width: 30%;
+    height: 6px;
+    border-radius: 999px;
+    transform: translateX(-50%);
+    background-color: var(--background-color2);
+}
+
+.testimonial .container .desc {
+    color: #555;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    letter-spacing: 0.5px;
+    word-spacing: 1px;
+    text-align: center;
+}
+
+/* Position left arrow outside container */
+.testimonial .container .left-arrow {
+    left: 20px;
+}
+
+/* Position right arrow outside container */
+.testimonial .container .right-arrow {
+    right: 20px;
+}
+
+.testimonial .container article {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+}
+
+.testimonial .container article figure {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.testimonial .container article figure img {
+    width: 100%;
+    height: 100%;
+}
+
+.testimonial .container article figcaption {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+    color: #555;
+}
+
+.testimonial .container article figcaption h4{
+    text-transform: capitalize;
+    color: var(--background-color2);
+}
 
 /* ********************************** Shoes Section ********************************** */
 /* ********************************** product cards with hover effect ********************************** */
@@ -850,16 +947,6 @@ header footer p a:hover {
     grid-template: 90px 280px auto / repeat(4, 1fr); /* header row + image row + details row / 4 columns */
     gap: 12px 40px; /* row-gap / column-gap */
     position: relative;
-}
-
-/* Product card container */
-.shoes .container .items {
-    border: 1px solid var(--secondary-color);
-    position: relative;
-    overflow: hidden;
-    border-radius: 12px; /* rounded corners */
-    box-shadow: 0 0px 15px rgba(0,0,0,0.45); /* subtle shadow */
-    transition: all 0.3s ease;
 }
 
 /* Front and back faces (overlay effect) */
@@ -882,42 +969,41 @@ header footer p a:hover {
 
 /* Background images for each item (front & back) */
 .shoes .container .item1 .front-face {
-    background: url(../images/shoes-item1-front.png) no-repeat;
+    background: url(../images/shoes-item1-front.jpg) no-repeat;
     background-size: 100% 100%;
 }
 .shoes .container .item1 .back-face {
-    background: url(../images/shoes-item1-back.png) no-repeat;
+    background: url(../images/shoes-item1-back.jpg) no-repeat;
     background-size: 100% 100%;
 }
 .shoes .container .item2 .front-face {
-    background: url(../images/shoes-item2-front.png) no-repeat;
+    background: url(../images/shoes-item2-front.jpg) no-repeat;
     background-size: 100% 100%;
 }
 .shoes .container .item2 .back-face {
-    background: url(../images/shoes-item2-back.png) no-repeat;
+    background: url(../images/shoes-item2-back.jpg) no-repeat;
     background-size: 100% 100%;
 }
 .shoes .container .item3 .front-face {
-    background: url(../images/shoes-item3-front.png) no-repeat;
+    background: url(../images/shoes-item3-front.jpg) no-repeat;
     background-size: 100% 100%;
 }
 .shoes .container .item3 .back-face {
-    background: url(../images/shoes-item3-back.png) no-repeat;
+    background: url(../images/shoes-item3-back.jpg) no-repeat;
     background-size: 100% 100%;
 }
 .shoes .container .item4 .front-face {
-    background: url(../images/shoes-item4-front.png) no-repeat;
+    background: url(../images/shoes-item4-front.jpg) no-repeat;
     background-size: 100% 100%;
 }
 .shoes .container .item4 .back-face {
-    background: url(../images/shoes-item4-back.png) no-repeat;
+    background: url(../images/shoes-item4-back.jpg) no-repeat;
     background-size: 100% 100%;
 }
 
 /* Hover effect for product card */
 .shoes .container .items:hover {
-    transform: translateY(-8px); /* lift card */
-    box-shadow: 0 10px 25px rgba(0,0,0,0.56); /* stronger shadow */
+    transform: scale(1.02) translateY(-10px); /* lift card */
 }
 
 /* Show front face on hover */
@@ -980,13 +1066,15 @@ header footer p a:hover {
 
 .collections {
     margin: 100px 0;
+    height: 100vh;
 }
 
 .collections .container {
     width: 90%;
     margin: 0 auto;
     display: grid;
-    grid-template: 90px 290px auto / repeat(3,1fr);
+    grid-template: 90px 280px auto / repeat(3,30%);
+    justify-content: space-evenly;
     gap: 12px 40px;
     position: relative;
 }
@@ -995,21 +1083,13 @@ header footer p a:hover {
     grid-column: span 3;
 }
 
-.collections .container .items,
 .collections .container .items img{
     width: 100%;
     height: 100%;
 }
 
-.collections .container .items {
-    border-radius:4px;
-    box-shadow: 0 0 15px 0 rgba(0,0,0,0.3);
-    overflow:hidden;
-}
-
 .collections .container .items:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px 0 rgba(0,0,0,0.35);
+    transform: scale(1.02) translateY(-10px);
 }
 
 .collections .container .item-details {
@@ -1018,6 +1098,7 @@ header footer p a:hover {
     justify-content: space-between;
     gap: 5px;
     padding: 15px;
+    overflow: hidden;
 }
 
 .collections .container .item-details .meta {
@@ -1035,18 +1116,33 @@ header footer p a:hover {
     color: var(--primary-color);
 }
 
-.collections .container .item1:hover ~ .item-details:nth-child(7) .title a,
-.collections .container .item2:hover ~ .item-details:nth-child(8) .title a,
-.collections .container .item3:hover ~ .item-details:nth-child(9) .title a,
+.collections .container .item1:hover ~ .item-details:nth-of-type(1) .title a,
+.collections .container .item2:hover ~ .item-details:nth-of-type(2) .title a,
+.collections .container .item3:hover ~ .item-details:nth-of-type(3) .title a,
+.collections .container .item4:hover ~ .item-details:nth-of-type(4) .title a,
 .collections .container .item-details:hover .title a {
     color: var(--background-color2);
 }
 
-.collections .container .item-details .desc {
-    font-size:13px;
-    line-height:1.6;
-    color: #555;
+.collections .container .item1:hover ~ .item-details:nth-of-type(1) .desc,
+.collections .container .item2:hover ~ .item-details:nth-of-type(2) .desc,
+.collections .container .item3:hover ~ .item-details:nth-of-type(3) .desc,
+.collections .container .item4:hover ~ .item-details:nth-of-type(4) .desc,
+.collections .container .item-details:hover .desc {
+    color: var(--primary-color);
 }
+
+.collections .container .item-details .desc {
+    font-size: 13px;
+    line-height: 1.6em;
+    color: #555;
+    display: -webkit-box;              
+    -webkit-line-clamp: 2;             
+    -webkit-box-orient: vertical;      
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 
 .collections .container .item-details .read-more {
     font-size: 14px;
@@ -1054,16 +1150,19 @@ header footer p a:hover {
     font-weight: bold;
     width: fit-content;
     margin: 0 auto;
-    margin-top: 15px;
 }
 
 .collections .container .item-details .read-more:hover {
-    transform: scale(1.07);
+    transform: scale(1.04);
 }
 
 /* /////////////////////////////////////////////////////////////////////// */
 
 .features {
+    margin: 100px 0;
+}
+
+.features .container{
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -1071,8 +1170,8 @@ header footer p a:hover {
     background: rgba(255, 255, 255, 0.1); 
     backdrop-filter: blur(6px); 
     border-radius: 16px;
-    margin: 100px auto;
     width: 90%;
+    margin: 0 auto;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
     border: 1px solid var(--secondary-color);
 }
@@ -1154,7 +1253,7 @@ footer .subscribe {
     width: 85%;
     margin: 0px auto;
     padding: 20px 0;
-    color: white;
+    color: #ccc;
     line-height: 1.6;
     display: flex;
     justify-content: space-between;
@@ -1175,9 +1274,15 @@ footer .subscribe .subscribe-field {
 footer .subscribe .subscribe-field input {
     padding: 0 10px;
     width: 300px;
-    border: 0;
+    border: 1px solid var(--background-color1);
     outline: 0;
-    background-color: #EAD9BD;
+    font-size: 15px;
+    color: var(--background-color1);
+    background-color: #222;
+}
+
+footer .subscribe .subscribe-field input::placeholder {
+    color: var(--background-color1);
 }
 
 footer .subscribe .subscribe-field button {
@@ -1186,6 +1291,7 @@ footer .subscribe .subscribe-field button {
     border: 0;
     font-weight: bold;
     font-size: 15px;
+    border-radius: 2px;
     background-color: var(--background-color1);
 }
 
@@ -1206,7 +1312,7 @@ footer .subscribe nav ul li a {
 }
 
 footer .subscribe nav ul li:hover a {
-    color: #fff;
+    color: var(--background-color1);
 }
 
 footer .sections-links {
@@ -1249,31 +1355,30 @@ footer .sections-links h3 {
 footer .sections-links a {
     color: #bbb;
     text-transform: capitalize;
+    transition: all 0.25s;
     line-height: 1.6;
 }
 
 footer .sections-links a:hover {
     text-decoration: underline;
-    color: #fff;
+    color: var(--background-color1);
 }
 
 footer .copy-right {
     padding: 15px;
+    text-transform: capitalize;
 }
 
 footer .copy-right p {
     text-align: center;
-    color: #fff;
+    color: #ccc;
 }
 
 footer .copy-right p i {
     font-size: 18px;
     color: var(--background-color1);
     opacity: 1;
-    animation-name: heart;
-    animation-duration: 0.75s;
-    animation-direction: alternate;
-    animation-iteration-count: infinite;
+    animation: heart 0.75s ease infinite alternate;
 }
 
 @keyframes heart {
